@@ -80,7 +80,7 @@ style={styles.textInput}
      ref={flatListRef}
      data={filteredData?.length>0?filteredData:productsData}
      renderItem={renderProducts}
-      keyExtractor={(item,index)=>index.toString()}
+     keyExtractor={(item,index)=>index.toString()}
      numColumns={2}
      showsVerticalScrollIndicator={false}
      scrollEnabled={true}
@@ -91,7 +91,8 @@ style={styles.textInput}
       <View style={{  marginTop: 16,
         alignItems: 'center',}}>
       
-      <TouchableResize name={"Load More"}
+      <TouchableResize 
+      name={"Load More"}
       loading={loading}
       onPress={loadMoreData}
       textStyle={{  textAlign:"center",

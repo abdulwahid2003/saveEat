@@ -1,10 +1,14 @@
-import { View, Text, Animated } from 'react-native'
+import { View,  Animated } from 'react-native'
 import React from 'react'
 import { globalStyles } from '../../global/globalStyles'
 import AppIcon from '../../assets/svg/ap.svg'
 import { ScreenNames } from '../../global'
+import { CommonActions} from '@react-navigation/native';
 const SplashScreen = ({navigation}) => {
-
+const resetStack=CommonActions.reset({
+    index:0,
+    routes:[{name:ScreenNames.PRODUCTS_SCREEN}]
+})
     const opacity=React.useRef(new Animated.Value(0)).current
     React.useEffect(()=>{
        Animated.timing(opacity,{
@@ -14,7 +18,7 @@ const SplashScreen = ({navigation}) => {
         duration:3000
        }).start(({finished})=>{
         if (finished) {
-            navigation.navigate(ScreenNames.PRODUCTS_SCREEN)
+            navigation.dispatch(resetStack)
         }
        })
     })

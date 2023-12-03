@@ -7,7 +7,7 @@ export const styles=StyleSheet.create({
     marginHorizontal:20,
     alignSelf:"center",
     position:"absolute",
-    bottom:SCREEN_HEIGHT/2.5
+    bottom:SCREEN_HEIGHT/3
   },
   descriptionText:(size)=>({
     fontWeight:"bold",
